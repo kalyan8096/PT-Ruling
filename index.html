@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT_Ruling - Automated Performance Testing & Chaos Engineering Suite</title>
+    <style>
+        :root {
+            --primary: #b91c1c; /* JMeter-inspired crimson red */
+            --dark: #1e293b;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
+            --text: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: var(--text); background: var(--light-bg); line-height: 1.6; }
+        
+        /* Top Banner (JMeter Style) */
+        header { background: var(--dark); color: #fff; padding: 1.2rem 2rem; border-bottom: 4px solid var(--primary); display: flex; justify-content: space-between; align-items: center; }
+        .brand h1 { font-size: 1.6rem; letter-spacing: 0.5px; }
+        .brand span { font-size: 0.85rem; color: #cbd5e1; display: block; }
+        .header-btn { background: var(--primary); color: #fff; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.9rem; }
+        .header-btn:hover { background: #991b1b; }
+
+        /* Main Layout: Left Sidebar + Right Content */
+        .container { display: flex; max-width: 1200px; margin: 2rem auto; gap: 2rem; padding: 0 1rem; }
+        
+        /* Left Navigation Sidebar */
+        aside { width: 250px; flex-shrink: 0; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem; height: fit-content; }
+        aside h3 { font-size: 0.9rem; text-transform: uppercase; color: var(--primary); margin-bottom: 0.6rem; margin-top: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+        aside h3:first-child { margin-top: 0; }
+        aside ul { list-style: none; }
+        aside li { margin: 0.4rem 0; }
+        aside a { text-decoration: none; color: var(--dark); font-size: 0.92rem; }
+        aside a:hover { color: var(--primary); text-decoration: underline; }
+
+        /* Content Area */
+        main { flex: 1; background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 2rem; }
+        section { margin-bottom: 2.5rem; }
+        h2 { color: var(--dark); border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1rem; font-size: 1.4rem; }
+        p { margin-bottom: 1rem; }
+
+        /* Feature Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .card { border: 1px solid var(--border); border-left: 4px solid var(--primary); padding: 1rem; border-radius: 4px; background: #fcfcfc; }
+        .card h4 { color: var(--dark); margin-bottom: 0.4rem; }
+
+        /* Download Table (Apache Mirror Style) */
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; font-size: 0.95rem; }
+        th { background: #f1f5f9; color: var(--dark); }
+        .dl-link { color: var(--primary); font-weight: bold; text-decoration: none; }
+        .dl-link:hover { text-decoration: underline; }
+
+        code { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: Consolas, monospace; font-size: 0.9rem; }
+        footer { text-align: center; padding: 2rem; font-size: 0.85rem; color: #64748b; border-top: 1px solid var(--border); margin-top: 3rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <h1>⚡ PT_Ruling</h1>
+        <span>Enterprise Performance Testing, JMX Automation & Chaos Engineering Desktop Suite</span>
+    </div>
+    <a href="#download" class="header-btn">⬇ Download v1.0.0</a>
+</header>
+
+<div class="container">
+    <!-- Left Navigation Sidebar (JMeter Style) -->
+    <aside>
+        <h3>About</h3>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Key Features</a></li>
+            <li><a href="#requirements">System Requirements</a></li>
+        </ul>
+        <h3>Download</h3>
+        <ul>
+            <li><a href="#download">Download Releases</a></li>
+            <li><a href="#verify">Verify Integrity (SHA256)</a></li>
+        </ul>
+        <h3>Documentation</h3>
+        <ul>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#modules">Core Modules</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Documentation Content -->
+    <main>
+        <section id="overview">
+            <h2>What is PT_Ruling?</h2>
+            <p><strong>PT_Ruling</strong> is a standalone Windows desktop application designed to automate end-to-end performance testing workflows, Selenium browser recording, dynamic JMeter (<code>.jmx</code>) script generation, live resource monitoring, and automated Word/Chart report generation.</p>
+            <p>Built as a native, self-contained executable, PT_Ruling eliminates complex Python environment setups while providing built-in checks for Java (JRE/JDK), Microsoft Visual C++ Redistributable, and Apache JMeter 5.6.3.</p>
+        </section>
+
+        <section id="features">
+            <h2>What can I do with it?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h4>🎥 Smart Browser Recording</h4>
+                    <p>Capture real user workflows via integrated Selenium WebDriver automation and convert traffic directly into structured test scenarios.</p>
+                </div>
+                <div class="card">
+                    <h4>⚙️ Automated JMX Engine</h4>
+                    <p>Dynamically construct, parse, and execute Apache JMeter XML (<code>.jmx</code>) test plans without manual XML editing.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Live Monitoring & Chaos</h4>
+                    <p>Track active execution, real-time system health metrics, and simulate chaos scenarios from a unified live activity registry.</p>
+                </div>
+                <div class="card">
+                    <h4>📄 Executive Reporting</h4>
+                    <p>Automatically calculate statistical percentiles, plot Matplotlib charts, and export ready-to-share Microsoft Word (<code>.docx</code>) reports and email summaries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="download">
+            <h2>Download PT_Ruling</h2>
+            <p>We recommend downloading the latest stable standalone release for Windows (64-bit). No Python installation is required.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Artifact</th>
+                        <th>Version</th>
+                        <th>Platform</th>
+                        <th>Download Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>PT_Ruling Standalone Binary</strong></td>
+                        <td>1.0.0</td>
+                        <td>Windows 10 / 11 (x64)</td>
+                        <td><a class="dl-link" href="YOUR-GITHUB-DOWNLOAD-LINK-HERE">PT_Ruling.exe</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="requirements">
+            <h2>System Requirements & Auto-Checks</h2>
+            <p>PT_Ruling includes built-in environment validation on startup:</p>
+            <ul>
+                <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit).</li>
+                <li><strong>Java Runtime:</strong> JRE or JDK 8+ installed and available in system <code>PATH</code> (Required for JMeter execution).</li>
+                <li><strong>VC++ Runtime:</strong> Microsoft Visual C++ 2015–2022 Redistributable (x64).</li>
+                <li><strong>Apache JMeter:</strong> Automatically detects or configures portable Apache JMeter 5.6.3 inside your local tools directory.</li>
+            </ul>
+        </section>
+
+        <section id="verify">
+            <h2>Verify File Integrity (Antivirus & SmartScreen Note)</h2>
+            <p>Because PT_Ruling is packed with encrypted bytecode protection to safeguard intellectual property, Windows SmartScreen may display an <em>"Unknown Publisher"</em> prompt on first launch. Click <strong>More Info &rarr; Run Anyway</strong> to launch the suite.</p>
+            <p>You can verify the integrity of your downloaded executable in Windows Command Prompt using:</p>
+            <code>certutil -hashfile PT_Ruling.exe SHA256</code>
+        </section>
+    </main>
+</div>
+
+<footer>
+    &copy; 2026 PT_Ruling Performance Suite. All rights reserved.
+</footer>
+
+</body>
+</html>
